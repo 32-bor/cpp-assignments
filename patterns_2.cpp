@@ -75,7 +75,32 @@ void Q8(int n)
 
 void Q7(int n)
 {
-
+	int i,j,k,m;
+	for(i=1;i<=n;i++)
+	{
+		k=1;
+		m=1;
+		for(j=1;j<=2*n-1;j++)
+		{
+			if(j>=n+1-i && j<=i+n-1)
+			{
+				if(k)
+				{
+					cout<<m<<" ";
+					j<5?m++:m--;
+				}
+				else
+				{
+					cout<<"  ";
+					if(j==5)m--;
+				}
+				k=1-k;
+			}
+			else
+				cout<<"  ";
+		}
+		cout<<endl;
+	}
 }
 
 void Q6(int n)
@@ -156,7 +181,28 @@ void Q4(int n)
 
 void Q3(int n)
 {
-
+	int i,j,k;
+	for(i=1;i<=n;i++)
+	{
+		k=1;
+		for(j=1;j<=2*n-1;j++)
+		{
+			if(j>=n+1-i && j<=i+n-1)
+			{
+				if(k)
+				{
+					cout<<"* ";
+					// k=1-k;
+				}
+				else
+					cout<<"  ";
+				k=1-k;
+			}
+			else
+				cout<<"  ";
+		}
+		cout<<endl;
+	}
 }
 
 void Q2(int n)
@@ -193,10 +239,10 @@ void Q1(int n)
 
 /*
 ABCDEEDCBA
-ABCDDCBA
-ABCCBA
-ABBA
-AA
+ ABCDDCBA
+  ABCCBA
+   ABBA
+    AA
 */
 
 void Q11(int n)
@@ -233,7 +279,7 @@ int main()
 	int n;
 	cout<<"Enter a no\n";
 	cin>>n;
-	Q10(n);
+	Q7(n);
 	cout<<endl;
 	return 0;
 }
