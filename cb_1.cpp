@@ -8,7 +8,8 @@ int isBoston(int);
 int farenToCelcius(int);
 void fTOc();
 void hollowPattern(int);
-
+void addingReversedNos(int);
+int reverse(int);
 
 int isBoston(int n)
 {
@@ -196,6 +197,26 @@ void doubleSidedArrow(int n)
     }
 }
 
+void addingReversedNos(int n) 
+{
+    int a,b,c,i;
+    for(int k=1;k<=n;k++)
+    {
+        cin>>a>>b;
+        cout<<reverse(reverse(a)+reverse(b))<<endl;
+    }
+}
+
+int reverse(int n)
+{
+    int ans=0;
+    while(n!=0)
+    {
+        ans=ans*10+n%10;
+        n/=10;
+    }
+    return ans;
+}
 int main()
 {
     int n,m;
