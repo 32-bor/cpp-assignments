@@ -10,6 +10,20 @@ void fTOc();
 void hollowPattern(int);
 void addingReversedNos(int);
 int reverse(int);
+int findUniqueNo(int);
+
+int findUniqueNo(int n)
+{
+    int i,a,ans=0;
+    for(i=1;i<=n;i++)
+    {
+        cin>>a;
+        ans^=a;
+    }
+    // cout<<endl;
+    // cout<<"Unique N0: "<<ans<<endl;
+    return ans;
+}
 
 int isBoston(int n)
 {
@@ -219,9 +233,11 @@ int reverse(int n)
 }
 int main()
 {
-    int n,m;
-    cout<<"Enter two nos\n";
-    cin>>n>>m;
-    cout<<n/m<<endl;
+    int n;
+    cout<<"Enter a no\n";
+    cin>>n;
+    cout<<endl;
+    int ans=findUniqueNo(n);
+    cout<<"Unique no: "<<ans<<endl;
     return 0;
 }
